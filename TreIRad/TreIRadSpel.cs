@@ -10,6 +10,7 @@ namespace TreIRad
     {
 
         char[] bräda;
+        //bool eller char vems tur det är
 
         public TreIRadSpel()
         {

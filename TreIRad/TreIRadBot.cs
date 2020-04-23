@@ -8,6 +8,14 @@ namespace TreIRad
 {
     class TreIRadBot
     {
+        public int fåDrag(char[] bräda)
+        {
+            //Kolla om bot kan vinna
+            //Kolla om motståndare kan vinna
+            //Lägg i mitten/hörn
+            //Lägg i sida
 
+            return -1;
+        }
     }
 }
