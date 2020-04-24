@@ -46,7 +46,6 @@ namespace TreIRad
         public bool ärVinst()
         {
             //Vågrätt
-
             //Lodrätt
 
             //Diagonalt

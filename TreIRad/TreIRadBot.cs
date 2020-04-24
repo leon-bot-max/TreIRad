@@ -16,6 +16,6 @@ namespace TreIRad
             //Lägg i sida
 
             return -1;
-        }
+        }//Minimax alogitm=??
     }
 }
