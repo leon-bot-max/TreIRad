@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace TreIRad
 {
-    public partial class Form1 : Form
+    public partial class meny : Form
     {
-        public Form1()
+        public meny()
         {
             InitializeComponent();
+        }
+
+        private void InitializeComponent()
+        {
+
         }
     }
 }

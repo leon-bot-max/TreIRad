@@ -1,6 +1,6 @@
 ﻿namespace TreIRad
 {
-    partial class Form1
+    partial class meny
     {
         /// <summary>
         /// Required designer variable.
