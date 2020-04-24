@@ -56,6 +56,8 @@ namespace TreIRad
             this.knapp3x3.TabIndex = 3;
             this.knapp3x3.Text = "3x3";
             this.knapp3x3.UseVisualStyleBackColor = false;
+            this.knapp3x3.Click += new System.EventHandler(this.Knapp3x3_Click);
+          
             // 
             // Meny
             // 
@@ -64,6 +66,8 @@ namespace TreIRad
             this.Controls.Add(this.knapp3x3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.välkommenText);
+            this.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Meny";
             this.Text = "tre i rad";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -72,6 +76,14 @@ namespace TreIRad
 
         }
 
-        
+        private void Knapp3x3_Click(object sender, EventArgs e)
+        {
+
+            Spelplan3x3 myForm = new Spelplan3x3();
+            this.Hide();
+            myForm.ShowDialog();
+            this.Close();
+
+        }
     }
 }
