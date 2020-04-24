@@ -16,7 +16,7 @@ namespace TreIRad
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new meny());
+            Application.Run(new Meny());
         }
     }
 }
