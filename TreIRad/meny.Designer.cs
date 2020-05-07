@@ -21,8 +21,7 @@
         }
 
         private System.Windows.Forms.Label välkommenText;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button knapp3x3;
+        private System.Windows.Forms.Button knappTryckStart;
     }
 }
 
