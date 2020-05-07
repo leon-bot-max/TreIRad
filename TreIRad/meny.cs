@@ -19,58 +19,45 @@ namespace TreIRad
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Meny));
             this.välkommenText = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.knapp3x3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.knappTryckStart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // välkommenText
             // 
             this.välkommenText.AutoSize = true;
             this.välkommenText.Font = new System.Drawing.Font("Franklin Gothic Medium", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.välkommenText.ForeColor = System.Drawing.Color.Yellow;
+            this.välkommenText.ForeColor = System.Drawing.Color.Black;
             this.välkommenText.Location = new System.Drawing.Point(79, 67);
             this.välkommenText.Name = "välkommenText";
             this.välkommenText.Size = new System.Drawing.Size(398, 41);
             this.välkommenText.TabIndex = 0;
             this.välkommenText.Text = "Välkommen till tre i rad";
             // 
-            // pictureBox1
+            // knappTryckStart
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(135, 420);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // knapp3x3
-            // 
-            this.knapp3x3.BackColor = System.Drawing.Color.White;
-            this.knapp3x3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.knapp3x3.Location = new System.Drawing.Point(336, 140);
-            this.knapp3x3.Name = "knapp3x3";
-            this.knapp3x3.Size = new System.Drawing.Size(200, 200);
-            this.knapp3x3.TabIndex = 3;
-            this.knapp3x3.Text = "3x3";
-            this.knapp3x3.UseVisualStyleBackColor = false;
-            this.knapp3x3.Click += new System.EventHandler(this.Knapp3x3_Click);
+            this.knappTryckStart.BackColor = System.Drawing.Color.Transparent;
+            this.knappTryckStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.knappTryckStart.Location = new System.Drawing.Point(142, 197);
+            this.knappTryckStart.Margin = new System.Windows.Forms.Padding(0);
+            this.knappTryckStart.Name = "knappTryckStart";
+            this.knappTryckStart.Size = new System.Drawing.Size(301, 123);
+            this.knappTryckStart.TabIndex = 3;
+            this.knappTryckStart.Text = "Tryck för att starta";
+            this.knappTryckStart.UseVisualStyleBackColor = false;
+            this.knappTryckStart.Click += new System.EventHandler(this.Knapp3x3_Click);
             // 
             // Meny
             // 
-            this.BackColor = System.Drawing.SystemColors.Highlight;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(584, 561);
-            this.Controls.Add(this.knapp3x3);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.knappTryckStart);
             this.Controls.Add(this.välkommenText);
             this.Cursor = System.Windows.Forms.Cursors.Cross;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Meny";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
