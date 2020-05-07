@@ -9,12 +9,12 @@ namespace TreIRad
     class TreIRadSpel
     {
 
-        char[,] bräda;
-        int storlek;
-        char tur = 'X';
-        char väntandeSpelare = 'O';
+        public char[,] bräda;
+        public int storlek;
+        public char tur = 'X';
+        public char väntandeSpelare = 'O';
         //bool eller char vems tur det är
-        int antalFörVinst;
+        public int antalFörVinst;
         public TreIRadSpel(int storlek, int antalFörVinst)
         {
             this.storlek = storlek;
@@ -25,7 +25,7 @@ namespace TreIRad
 
         public bool ärTom(int x, int y)
         {
-            return bräda[y, x] == new char(); //Kanske byta plats på x, y??????
+            return bräda[y, x] == new char(); 
         }
 
         public void görDrag(int x, int y)
@@ -53,13 +53,7 @@ namespace TreIRad
             return true; //Index of returnar -1 om det inte finns tom
         }
 
-        public int[] getCoords(int index)
-        {
-            int[] coords = new int[2];//{x, y}
-            coords[0] = index % storlek;
-            coords[1] = index / storlek; //Ska golvas
-            return coords;
-        }
+
         public bool ärVinst()
         {
             //Letar fall den som la sist har en vinst
@@ -139,6 +133,36 @@ namespace TreIRad
             }
 
             return false;
+        }
+
+        public int[] getCoords(int index)
+        {
+            int[] coords = new int[2];//{x, y}
+            coords[0] = index % storlek;
+            coords[1] = index / storlek; //Ska golvas tror jag
+            return coords;
+        }
+
+
+
+        private void kopieraBräda(char[,] annanBräda)
+        {
+            for (int y = 0; y < storlek; y++)
+            {
+                for (int x = 0; x < storlek; x++)
+                {
+                    bräda[y, x] = annanBräda[y, x];
+                }
+            }
+        }
+        public void kopieraAnnatSpel(TreIRadSpel spel)
+        {
+            if (spel.storlek != storlek)
+                return;
+
+            kopieraBräda(spel.bräda);
+            tur = spel.tur;
+            väntandeSpelare = spel.väntandeSpelare;
         }
 
     }
