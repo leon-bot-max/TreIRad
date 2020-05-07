@@ -38,7 +38,7 @@ namespace TreIRad
             // 
             this.knappTryckStart.BackColor = System.Drawing.Color.Transparent;
             this.knappTryckStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.knappTryckStart.Location = new System.Drawing.Point(142, 197);
+            this.knappTryckStart.Location = new System.Drawing.Point(142, 194);
             this.knappTryckStart.Margin = new System.Windows.Forms.Padding(0);
             this.knappTryckStart.Name = "knappTryckStart";
             this.knappTryckStart.Size = new System.Drawing.Size(301, 123);
@@ -54,10 +54,11 @@ namespace TreIRad
             this.ClientSize = new System.Drawing.Size(584, 561);
             this.Controls.Add(this.knappTryckStart);
             this.Controls.Add(this.välkommenText);
-            this.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Meny";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();
 

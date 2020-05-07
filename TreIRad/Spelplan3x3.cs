@@ -17,27 +17,25 @@ namespace TreIRad
             InitializeComponent();
         }
         bool spelKlart = false;
-        int vemsTur = 0;
+        public void Button_Click(object sender, EventArgs e)
+        {
+             Button knapp = (Button)sender;
+            
+        }
         
 
         public void spela()
         {
             while(spelKlart == false)
             {
-                if(vemsTur % 2 == 0)//spelarens tur
-                {
-
-                }
-                else//AI tur
-                {
-                    
-                }
+             if()   
 
 
                 //om tre i rad spelaklart = true
             }
         }
 
-      
+        
+       
     }
 }
