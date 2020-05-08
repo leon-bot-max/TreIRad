@@ -18,16 +18,26 @@ namespace TreIRad
         }
 
 
-        public int fåDrag(char[,] bräda)
+
+        public int[] fåDrag(char[,] bräda)
         {
+            for (int y = 0; y < egetSpel.storlek; y++)
+            {
+                for (int x = 0; x < egetSpel.storlek; x++) ;
+                
+
+            }
+            
             //Kolla om bot kan vinna
             //Kolla om motståndare kan vinna
             //Lägg i mitten/hörn
             //Lägg i sida
 
-            return -1;
+            return new int[] { -1, -1 } ;
         }//Minimax alogitm=??
 
+        
+            
 
 
 
@@ -49,9 +59,15 @@ namespace TreIRad
 
             }
             return 0;
+            
+
+            
+
+            
+
 
         }
-
+        
 
     }
 }

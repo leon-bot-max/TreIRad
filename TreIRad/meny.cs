@@ -38,7 +38,7 @@ namespace TreIRad
             // 
             this.knappTryckStart.BackColor = System.Drawing.Color.Transparent;
             this.knappTryckStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.knappTryckStart.Location = new System.Drawing.Point(142, 197);
+            this.knappTryckStart.Location = new System.Drawing.Point(143, 200);
             this.knappTryckStart.Margin = new System.Windows.Forms.Padding(0);
             this.knappTryckStart.Name = "knappTryckStart";
             this.knappTryckStart.Size = new System.Drawing.Size(301, 123);
@@ -73,6 +73,6 @@ namespace TreIRad
 
         }
 
-        
+       
     }
 }
