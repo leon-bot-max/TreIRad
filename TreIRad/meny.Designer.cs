@@ -21,7 +21,8 @@
         }
 
         private System.Windows.Forms.Label välkommenText;
-        private System.Windows.Forms.Button knappTryckStart;
+        private System.Windows.Forms.Button knappSpelaAI;
+        private System.Windows.Forms.Button KnappSpelaAnnanSpelare;
     }
 }
 

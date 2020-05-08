@@ -43,11 +43,21 @@ namespace TreIRad
         public int[] fåDragMinimax()
         {
             egetSpel.kopieraAnnatSpel(spel);
+
+            for (int y = 0; y < egetSpel.storlek; y++)
+            {
+                for (int x = 0; x < egetSpel.storlek; x++)
+                {
+
+                }
+            }
+
+
             return new int[] { 1, 1 };
         }
 
 
-        public int minimax(int djup, int alpha, int beta, bool maximizing)
+        public int minimax(int djup, int alpha, int beta, bool maximizing)//Ta in möjliga drag?
         {
             //x - maximizing?
             //o - minimizing?
