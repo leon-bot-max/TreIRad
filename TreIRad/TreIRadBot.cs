@@ -25,7 +25,6 @@ namespace TreIRad
             {
                 for (int x = 0; x < egetSpel.storlek; x++) ;
                 
-
             }
             
             //Kolla om bot kan vinna
