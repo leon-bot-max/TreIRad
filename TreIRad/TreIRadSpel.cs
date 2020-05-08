@@ -50,7 +50,7 @@ namespace TreIRad
                     }
                 }
             }
-            return true; //Index of returnar -1 om det inte finns tom
+            return true; //är full bräda
         }
 
 
@@ -135,6 +135,16 @@ namespace TreIRad
             return false;
         }
 
+
+
+        public void taBortDrag(int x, int y)
+        {
+            bräda[y, x] = new char();
+            char temp = tur;
+            tur = väntandeSpelare;
+            väntandeSpelare = temp;
+
+        }
         public int[] fåKordinater(int index)
         {
             int[] coords = new int[2];//{x, y}
