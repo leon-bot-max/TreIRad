@@ -135,7 +135,7 @@ namespace TreIRad
             return false;
         }
 
-        public int[] getCoords(int index)
+        public int[] fåKordinater(int index)
         {
             int[] coords = new int[2];//{x, y}
             coords[0] = index % storlek;
