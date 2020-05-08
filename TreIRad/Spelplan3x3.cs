@@ -17,9 +17,13 @@ namespace TreIRad
             InitializeComponent();
         }
         bool spelKlart = false;
+        TreIRadSpel spel = new TreIRadSpel(3,3);
+
+
         public void Button_Click(object sender, EventArgs e)
         {
              Button knapp = (Button)sender;
+
             
         }
         
@@ -28,7 +32,7 @@ namespace TreIRad
         {
             while(spelKlart == false)
             {
-             if()   
+               
 
 
                 //om tre i rad spelaklart = true
