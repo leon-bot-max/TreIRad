@@ -20,7 +20,8 @@ namespace TreIRad
         private void InitializeComponent()
         {
             this.välkommenText = new System.Windows.Forms.Label();
-            this.knappTryckStart = new System.Windows.Forms.Button();
+            this.knappSpelaAI = new System.Windows.Forms.Button();
+            this.KnappSpelaAnnanSpelare = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // välkommenText
@@ -34,25 +35,38 @@ namespace TreIRad
             this.välkommenText.TabIndex = 0;
             this.välkommenText.Text = "Välkommen till tre i rad";
             // 
-            // knappTryckStart
+            // knappSpelaAI
             // 
-            this.knappTryckStart.BackColor = System.Drawing.Color.Transparent;
-            this.knappTryckStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.knappTryckStart.Location = new System.Drawing.Point(142, 194);
-            this.knappTryckStart.Margin = new System.Windows.Forms.Padding(0);
-            this.knappTryckStart.Name = "knappTryckStart";
-            this.knappTryckStart.Size = new System.Drawing.Size(301, 123);
-            this.knappTryckStart.TabIndex = 3;
-            this.knappTryckStart.Text = "Tryck för att starta";
-            this.knappTryckStart.UseVisualStyleBackColor = false;
-            this.knappTryckStart.Click += new System.EventHandler(this.Knapp3x3_Click);
+            this.knappSpelaAI.BackColor = System.Drawing.Color.Transparent;
+            this.knappSpelaAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.knappSpelaAI.Location = new System.Drawing.Point(86, 126);
+            this.knappSpelaAI.Margin = new System.Windows.Forms.Padding(0);
+            this.knappSpelaAI.Name = "knappSpelaAI";
+            this.knappSpelaAI.Size = new System.Drawing.Size(184, 170);
+            this.knappSpelaAI.TabIndex = 3;
+            this.knappSpelaAI.Text = "Spela mot AI";
+            this.knappSpelaAI.UseVisualStyleBackColor = false;
+            this.knappSpelaAI.Click += new System.EventHandler(this.Knapp3x3_Click);
+            // 
+            // KnappSpelaAnnanSpelare
+            // 
+            this.KnappSpelaAnnanSpelare.BackColor = System.Drawing.Color.Transparent;
+            this.KnappSpelaAnnanSpelare.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KnappSpelaAnnanSpelare.Location = new System.Drawing.Point(304, 126);
+            this.KnappSpelaAnnanSpelare.Margin = new System.Windows.Forms.Padding(0);
+            this.KnappSpelaAnnanSpelare.Name = "KnappSpelaAnnanSpelare";
+            this.KnappSpelaAnnanSpelare.Size = new System.Drawing.Size(184, 170);
+            this.KnappSpelaAnnanSpelare.TabIndex = 4;
+            this.KnappSpelaAnnanSpelare.Text = "Spela mot annan spelare";
+            this.KnappSpelaAnnanSpelare.UseVisualStyleBackColor = false;
             // 
             // Meny
             // 
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(584, 561);
-            this.Controls.Add(this.knappTryckStart);
+            this.Controls.Add(this.KnappSpelaAnnanSpelare);
+            this.Controls.Add(this.knappSpelaAI);
             this.Controls.Add(this.välkommenText);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
