@@ -10,6 +10,7 @@ namespace TreIRad
     {
         TreIRadSpel spel;
         TreIRadSpel egetSpel;
+        private int y;
 
         public TreIRadBot(TreIRadSpel spel)
         {
@@ -25,6 +26,8 @@ namespace TreIRad
             {
                 for (int x = 0; x < egetSpel.storlek; x++) ;
                 
+
+
             }
             
             //Kolla om bot kan vinna
@@ -35,8 +38,8 @@ namespace TreIRad
             return new int[] { -1, -1 } ;
         }//Minimax alogitm=??
 
-        
-            
+
+
 
 
 
@@ -48,11 +51,14 @@ namespace TreIRad
             {
                 for (int x = 0; x < egetSpel.storlek; x++)
                 {
+                    if (spel.ärTom(x, y)) ;
+
 
                 }
             }
+            
 
-
+            //egetSpel.görDrag(x, y));
             return new int[] { 1, 1 };
         }
 
@@ -68,15 +74,8 @@ namespace TreIRad
 
             }
             return 0;
-            
-
-            
-
-            
-
-
         }
-        
+
 
     }
 }
