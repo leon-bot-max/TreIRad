@@ -23,8 +23,8 @@ namespace TreIRad
 
         public void Button_Click(object sender, EventArgs e)
         {
-             Button knapp = (Button)sender;
-            int knappIndex = int.Parse(knapp.Name[knapp.Name.Length - 1].ToString());//fix??
+            Button knapp = (Button)sender;
+            int knappIndex = Array.IndexOf(knappar, knapp);//int.Parse(knapp.Name[knapp.Name.Length - 1].ToString());//fix??
             int[] kordinater = spel.fåKordinater(knappIndex);//{x, y}
 
             if (spel.ärTom(kordinater[0], kordinater[1]))
@@ -60,7 +60,7 @@ namespace TreIRad
         public void görKnappar()
         {
 
-            int knappStorlek = Width / spel.storlek-3;
+            int knappStorlek = Width/spel.storlek;//Width / spel.storlek-3;
             knappar = new Button[spel.storlek * spel.storlek];
             for (int i = 0;  i < knappar.Length; i++)
             {
@@ -70,10 +70,12 @@ namespace TreIRad
                 Button knapp = new Button();
                 knapp.Location = new Point(x, y);
                 knapp.Size = new Size(knappStorlek, knappStorlek);
-                knapp.Text = "Detta är knapp " + i;
+                knapp.Text = "";
                 knapp.Name = "knapp" + i;
+                knapp.Font = new Font("Trebuchet MS", 72);
                 knapp.Click += new EventHandler(Button_Click);
-                knapp.BringToFront();               Controls.Add(knapp);
+                knapp.BringToFront();               
+                Controls.Add(knapp);
                 knappar[i] = knapp;
             }
         }
