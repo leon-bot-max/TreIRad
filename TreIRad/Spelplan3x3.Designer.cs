@@ -41,6 +41,7 @@
             // 
             // button0
             // 
+            this.button0.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button0.Location = new System.Drawing.Point(30, 12);
             this.button0.Name = "button0";
             this.button0.Size = new System.Drawing.Size(170, 170);
@@ -50,6 +51,7 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(206, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(170, 170);
@@ -59,6 +61,7 @@
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(382, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(170, 170);
@@ -68,6 +71,7 @@
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(30, 188);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(170, 170);
@@ -77,6 +81,7 @@
             // 
             // button4
             // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(206, 188);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(170, 170);
@@ -86,6 +91,7 @@
             // 
             // button5
             // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(382, 188);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(170, 170);
@@ -95,6 +101,7 @@
             // 
             // button6
             // 
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Location = new System.Drawing.Point(30, 364);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(170, 170);
@@ -104,6 +111,7 @@
             // 
             // button7
             // 
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.Location = new System.Drawing.Point(206, 364);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(170, 170);
@@ -113,6 +121,7 @@
             // 
             // button8
             // 
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.Location = new System.Drawing.Point(382, 364);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(170, 170);
@@ -139,7 +148,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Spelplan3x3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Spelplan3x3";
             this.ResumeLayout(false);
 
         }

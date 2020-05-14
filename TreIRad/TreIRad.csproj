@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AfterGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AfterGame.Designer.cs">
+      <DependentUpon>AfterGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Meny.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     </Compile>
     <Compile Include="TreIRadBot.cs" />
     <Compile Include="TreIRadSpel.cs" />
+    <EmbeddedResource Include="AfterGame.resx">
+      <DependentUpon>AfterGame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Meny.resx">
       <DependentUpon>Meny.cs</DependentUpon>
     </EmbeddedResource>
