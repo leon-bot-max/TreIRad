@@ -19,10 +19,10 @@ namespace TreIRad
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Meny));
             this.välkommenText = new System.Windows.Forms.Label();
             this.knappSpelaAI = new System.Windows.Forms.Button();
             this.KnappSpelaAnnanSpelare = new System.Windows.Forms.Button();
+            this.stängAvKnapp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // välkommenText
@@ -31,7 +31,7 @@ namespace TreIRad
             this.välkommenText.BackColor = System.Drawing.Color.Transparent;
             this.välkommenText.Font = new System.Drawing.Font("Franklin Gothic Medium", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.välkommenText.ForeColor = System.Drawing.Color.Black;
-            this.välkommenText.Location = new System.Drawing.Point(79, 67);
+            this.välkommenText.Location = new System.Drawing.Point(90, 71);
             this.välkommenText.Name = "välkommenText";
             this.välkommenText.Size = new System.Drawing.Size(398, 41);
             this.välkommenText.TabIndex = 0;
@@ -41,7 +41,7 @@ namespace TreIRad
             // 
             this.knappSpelaAI.BackColor = System.Drawing.Color.Transparent;
             this.knappSpelaAI.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.knappSpelaAI.Location = new System.Drawing.Point(86, 126);
+            this.knappSpelaAI.Location = new System.Drawing.Point(97, 126);
             this.knappSpelaAI.Margin = new System.Windows.Forms.Padding(0);
             this.knappSpelaAI.Name = "knappSpelaAI";
             this.knappSpelaAI.Size = new System.Drawing.Size(184, 170);
@@ -63,17 +63,27 @@ namespace TreIRad
             this.KnappSpelaAnnanSpelare.UseVisualStyleBackColor = false;
             this.KnappSpelaAnnanSpelare.Click += new System.EventHandler(this.KnappSpelaAnnanSpelare_Click);
             // 
+            // stängAvKnapp
+            // 
+            this.stängAvKnapp.Location = new System.Drawing.Point(497, 526);
+            this.stängAvKnapp.Name = "stängAvKnapp";
+            this.stängAvKnapp.Size = new System.Drawing.Size(75, 23);
+            this.stängAvKnapp.TabIndex = 5;
+            this.stängAvKnapp.Text = "Stäng av";
+            this.stängAvKnapp.UseVisualStyleBackColor = true;
+            this.stängAvKnapp.Click += new System.EventHandler(this.stängAvKnapp_Click);
+            // 
             // Meny
             // 
-            this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.DimGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(584, 561);
+            this.Controls.Add(this.stängAvKnapp);
             this.Controls.Add(this.KnappSpelaAnnanSpelare);
             this.Controls.Add(this.knappSpelaAI);
             this.Controls.Add(this.välkommenText);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Meny";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -98,6 +108,11 @@ namespace TreIRad
             this.Hide();
             myForm.ShowDialog();
             this.Close();
+        }
+
+        private void stängAvKnapp_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

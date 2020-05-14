@@ -19,10 +19,11 @@
             }
             base.Dispose(disposing);
         }
-
+       
         private System.Windows.Forms.Label välkommenText;
         private System.Windows.Forms.Button knappSpelaAI;
         private System.Windows.Forms.Button KnappSpelaAnnanSpelare;
+        private System.Windows.Forms.Button stängAvKnapp;
     }
 }
 
