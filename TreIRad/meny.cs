@@ -19,6 +19,7 @@ namespace TreIRad
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Meny));
             this.välkommenText = new System.Windows.Forms.Label();
             this.knappSpelaAI = new System.Windows.Forms.Button();
             this.KnappSpelaAnnanSpelare = new System.Windows.Forms.Button();
@@ -27,7 +28,8 @@ namespace TreIRad
             // välkommenText
             // 
             this.välkommenText.AutoSize = true;
-            this.välkommenText.Font = new System.Drawing.Font("Franklin Gothic Medium", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.välkommenText.BackColor = System.Drawing.Color.Transparent;
+            this.välkommenText.Font = new System.Drawing.Font("Franklin Gothic Medium", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.välkommenText.ForeColor = System.Drawing.Color.Black;
             this.välkommenText.Location = new System.Drawing.Point(79, 67);
             this.välkommenText.Name = "välkommenText";
@@ -59,10 +61,12 @@ namespace TreIRad
             this.KnappSpelaAnnanSpelare.TabIndex = 4;
             this.KnappSpelaAnnanSpelare.Text = "Spela mot annan spelare";
             this.KnappSpelaAnnanSpelare.UseVisualStyleBackColor = false;
+            this.KnappSpelaAnnanSpelare.Click += new System.EventHandler(this.KnappSpelaAnnanSpelare_Click);
             // 
             // Meny
             // 
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(584, 561);
             this.Controls.Add(this.KnappSpelaAnnanSpelare);
@@ -88,6 +92,12 @@ namespace TreIRad
 
         }
 
-        
+        private void KnappSpelaAnnanSpelare_Click(object sender, EventArgs e)
+        {
+            Spelplan3x3 myForm = new Spelplan3x3();
+            this.Hide();
+            myForm.ShowDialog();
+            this.Close();
+        }
     }
 }

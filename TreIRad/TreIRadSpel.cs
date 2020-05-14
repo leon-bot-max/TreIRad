@@ -118,7 +118,7 @@ namespace TreIRad
                         bool vinstHittad = true;
                         for (int v = 0; v < antalFörVinst; v++)
                         {
-                            if (bräda[y + v, x] != väntandeSpelare)
+                            if (bräda[y + v, x - v] != väntandeSpelare)
                             {
                                 vinstHittad = false;
                                 break;
