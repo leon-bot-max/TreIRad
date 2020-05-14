@@ -15,10 +15,11 @@ namespace TreIRad
         public Spelplan3x3()
         {
             InitializeComponent();
+            görKnappar();
         }
         bool spelKlart = false;
         TreIRadSpel spel = new TreIRadSpel(3,3);
-
+        Button[] knappar;
 
         public void Button_Click(object sender, EventArgs e)
         {
@@ -56,7 +57,26 @@ namespace TreIRad
             }
         }
 
-        
+        public void görKnappar()
+        {
+
+            int knappStorlek = Width / spel.storlek-3;
+            knappar = new Button[spel.storlek * spel.storlek];
+            for (int i = 0;  i < knappar.Length; i++)
+            {
+                int x = (i % spel.storlek)*knappStorlek;
+                int y = (i / spel.storlek)*knappStorlek;
+
+                Button knapp = new Button();
+                knapp.Location = new Point(x, y);
+                knapp.Size = new Size(knappStorlek, knappStorlek);
+                knapp.Text = "Detta är knapp " + i;
+                knapp.Name = "knapp" + i;
+                knapp.Click += new EventHandler(Button_Click);
+                knapp.BringToFront();               Controls.Add(knapp);
+                knappar[i] = knapp;
+            }
+        }
        
     }
 }
