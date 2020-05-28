@@ -22,60 +22,73 @@ namespace TreIRad
 
         public int[] fåDrag(char[,] bräda)
         {
-            for (int y = 0; y < egetSpel.storlek; y++)
-            {
-                for (int x = 0; x < egetSpel.storlek; x++) ;
-                
-
-
-            }
-            
-            //Kolla om bot kan vinna
-            //Kolla om motståndare kan vinna
-            //Lägg i mitten/hörn
-            //Lägg i sida
-
-            return new int[] { -1, -1 } ;
-        }//Minimax alogitm=??
-
-
-
-
-
-
-        public int[] fåDragMinimax()
-        {
             egetSpel.kopieraAnnatSpel(spel);
 
+            //Kolla om bot kan vinna
             for (int y = 0; y < egetSpel.storlek; y++)
             {
                 for (int x = 0; x < egetSpel.storlek; x++)
                 {
-                    if (spel.ärTom(x, y)) ;
+                    if (egetSpel.ärTom(x, y))
+                    {
+                        egetSpel.görDrag(x, y);
+
+                        if (egetSpel.ärVinst())
+                        {
+                            return new int[] { x, y };
+                        }
+                        egetSpel.taBortDrag(x, y);
+                    }
+                }
+            }
+
+                        
+
+                        //Kolla om motståndare kan vinna
+                        //Lägg i mitten/hörn
+                        //Lägg i sida
+
+                        return new int[] { -1, -1 };
+                    }//Minimax alogitm=??
+
+
+
+
+
+
+                   public int[] fåDragMinimax()
+                    {
+                        egetSpel.kopieraAnnatSpel(spel);
+
+                        for (int y = 0; y < egetSpel.storlek; y++)
+                        {
+                            for (int x = 0; x < egetSpel.storlek; x++)
+                            {
+                                if (spel.ärTom(x, y)) ;
+
+
+                            }
+                        }
+
+
+                        //egetSpel.görDrag(x, y));
+                        return new int[] { 1, 1 };
+                    }
+
+
+                    public int minimax(int djup, int alpha, int beta, bool maximizing)//Ta in möjliga drag?
+                    {
+                        //x - maximizing?
+                        //o - minimizing?
+
+                        if (maximizing)
+                        {
+                            int bästaScore = - -1000;
+
+                        }
+                        return 0;
+                    }
 
 
                 }
             }
-            
-
-            //egetSpel.görDrag(x, y));
-            return new int[] { 1, 1 };
-        }
-
-
-        public int minimax(int djup, int alpha, int beta, bool maximizing)//Ta in möjliga drag?
-        {
-            //x - maximizing?
-            //o - minimizing?
-
-            if (maximizing)
-            {
-                int bästaScore = - -1000;
-
-            }
-            return 0;
-        }
-
-
-    }
-}

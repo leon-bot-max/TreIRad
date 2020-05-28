@@ -31,13 +31,14 @@
             this.speletÖverText = new System.Windows.Forms.Label();
             this.startaOmKnapp = new System.Windows.Forms.Button();
             this.tillMenyKnapp = new System.Windows.Forms.Button();
+            this.harVunnitBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // speletÖverText
             // 
             this.speletÖverText.AutoSize = true;
             this.speletÖverText.Font = new System.Drawing.Font("Lucida Console", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.speletÖverText.Location = new System.Drawing.Point(12, 49);
+            this.speletÖverText.Location = new System.Drawing.Point(12, 20);
             this.speletÖverText.Name = "speletÖverText";
             this.speletÖverText.Size = new System.Drawing.Size(574, 65);
             this.speletÖverText.TabIndex = 0;
@@ -45,7 +46,8 @@
             // 
             // startaOmKnapp
             // 
-            this.startaOmKnapp.Location = new System.Drawing.Point(137, 169);
+            this.startaOmKnapp.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startaOmKnapp.Location = new System.Drawing.Point(137, 176);
             this.startaOmKnapp.Name = "startaOmKnapp";
             this.startaOmKnapp.Size = new System.Drawing.Size(307, 126);
             this.startaOmKnapp.TabIndex = 1;
@@ -54,6 +56,7 @@
             // 
             // tillMenyKnapp
             // 
+            this.tillMenyKnapp.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tillMenyKnapp.Location = new System.Drawing.Point(137, 320);
             this.tillMenyKnapp.Name = "tillMenyKnapp";
             this.tillMenyKnapp.Size = new System.Drawing.Size(307, 126);
@@ -62,11 +65,26 @@
             this.tillMenyKnapp.UseVisualStyleBackColor = true;
             this.tillMenyKnapp.Click += new System.EventHandler(this.tillMenyKnapp_Click);
             // 
+            // harVunnitBox
+            // 
+            this.harVunnitBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.harVunnitBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.harVunnitBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.harVunnitBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.harVunnitBox.Location = new System.Drawing.Point(105, 126);
+            this.harVunnitBox.Name = "harVunnitBox";
+            this.harVunnitBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.harVunnitBox.Size = new System.Drawing.Size(377, 44);
+            this.harVunnitBox.TabIndex = 3;
+            this.harVunnitBox.Text = "x har vunnit";
+            // 
             // afterGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(584, 561);
+            this.Controls.Add(this.harVunnitBox);
             this.Controls.Add(this.tillMenyKnapp);
             this.Controls.Add(this.startaOmKnapp);
             this.Controls.Add(this.speletÖverText);
@@ -83,5 +101,6 @@
         private System.Windows.Forms.Label speletÖverText;
         private System.Windows.Forms.Button startaOmKnapp;
         private System.Windows.Forms.Button tillMenyKnapp;
+        private System.Windows.Forms.RichTextBox harVunnitBox;
     }
 }
