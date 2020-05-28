@@ -12,15 +12,22 @@ namespace TreIRad
 {
     public partial class Spelplan3x3 : Form
     {
-        public Spelplan3x3()
+
+
+        bool spelKlart = false;
+        TreIRadSpel spel = new TreIRadSpel(3, 3);
+        TreIRadBot bot; //new TreIRadBot(spel);
+        Button[] knappar;
+        bool spelarMotBot;
+
+        public Spelplan3x3(bool spelarMotBot)
         {
             InitializeComponent();
             görKnappar();
+            bot = new TreIRadBot(spel);
+            this.spelarMotBot = spelarMotBot;
         }
-        bool spelKlart = false;
-        TreIRadSpel spel = new TreIRadSpel(3,3);
-        Button[] knappar;
-        bool spelarMotBot;
+
 
         public void Button_Click(object sender, EventArgs e)
         {
@@ -32,13 +39,19 @@ namespace TreIRad
             {
                 spel.görDrag(kordinater[0], kordinater[1]);
                 knapp.Text = spel.bräda[kordinater[1], kordinater[0]].ToString();
-
+                kollaEfterVinst();
+                if (spelarMotBot)
+                {
+                    görBotDrag();
+                    kollaEfterVinst();
+                }
+                
             }
-            kollaEfterVinst();
-
             
         }
         
+  
+
         public void kollaEfterVinst()
         {
             if (spel.ärVinst())
@@ -48,6 +61,18 @@ namespace TreIRad
             else if (spel.ärOavgjort())
             {
                 Console.WriteLine("Oavgjort");
+            }
+        }
+
+        public void görBotDrag()
+        {
+            int[] drag = bot.fåDragMinimax(100);
+            spel.görDrag(drag[0], drag[1]);
+
+            for (int i = 0; i < knappar.Length; i++)
+            {
+                int[] koord = spel.fåKordinater(i);
+                knappar[i].Text = spel.bräda[koord[1], koord[0]].ToString();
             }
         }
 

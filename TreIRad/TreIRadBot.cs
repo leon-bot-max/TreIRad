@@ -42,53 +42,129 @@ namespace TreIRad
                 }
             }
 
-                        
-
-                        //Kolla om motståndare kan vinna
-                        //Lägg i mitten/hörn
-                        //Lägg i sida
-
-                        return new int[] { -1, -1 };
-                    }//Minimax alogitm=??
 
 
+            //Kolla om motståndare kan vinna
+            //Lägg i mitten/hörn
+            //Lägg i sida
+
+            return new int[] { -1, -1 };
+        }//Minimax alogitm=??
 
 
 
 
-                   public int[] fåDragMinimax()
+
+
+        public int[] fåDragMinimax(int maxDjup)
+        {
+            egetSpel.kopieraAnnatSpel(spel);
+            bool maximize = (egetSpel.tur == 'X');
+
+            int bästaScore = -10000;
+            int[] bästaDrag = new int[] { 0,0};
+            if (!maximize)
+            {
+                bästaScore = 10000;
+            }
+            for (int y = 0; y < egetSpel.storlek; y++)
+            {
+                for (int x = 0; x < egetSpel.storlek; x++)
+                {
+                    if (egetSpel.ärTom(x, y))
                     {
-                        egetSpel.kopieraAnnatSpel(spel);
+                        egetSpel.görDrag(x, y);
+                        int score = minimax(1, -10000, 10000, !maximize, maxDjup);
+                        egetSpel.taBortDrag(x, y);
 
-                        for (int y = 0; y < egetSpel.storlek; y++)
+                        if ((score > bästaScore && maximize) || (score < bästaScore && !maximize))
                         {
-                            for (int x = 0; x < egetSpel.storlek; x++)
-                            {
-                                if (spel.ärTom(x, y)) ;
-
-
-                            }
+                            bästaScore = score;
+                            bästaDrag = new int[] { x, y };
                         }
-
-
-                        //egetSpel.görDrag(x, y));
-                        return new int[] { 1, 1 };
                     }
-
-
-                    public int minimax(int djup, int alpha, int beta, bool maximizing)//Ta in möjliga drag?
-                    {
-                        //x - maximizing?
-                        //o - minimizing?
-
-                        if (maximizing)
-                        {
-                            int bästaScore = - -1000;
-
-                        }
-                        return 0;
-                    }
-
-
                 }
             }
+            //egetSpel.görDrag(x, y));
+            return bästaDrag;
+        }
+
+
+        public int minimax(int djup, int alpha, int beta, bool maximizing, int maxDjup)//Ta in möjliga drag?
+        {
+            bool finnsVinst = egetSpel.ärVinst();
+            if (finnsVinst)
+            {
+                if (egetSpel.väntandeSpelare == 'X')
+                {
+                    return 100-djup;
+                }
+                else
+                {
+                    return -100+djup;
+                }
+            }
+            else if (egetSpel.ärOavgjort())
+            {
+                return 0;
+            }
+            else if (djup >= maxDjup)
+            {
+                return 0;
+            }
+
+            //x - maximizing?
+            //o - minimizing?
+            int bästaScore = 0;
+
+            if (maximizing)
+            {
+                bästaScore = -10000;
+
+                for (int y = 0; y < egetSpel.storlek; y++)
+                {
+                    for (int x = 0; x < egetSpel.storlek; x++)
+                    {
+                        if (egetSpel.ärTom(x, y))
+                        {
+                            egetSpel.görDrag(x, y);
+                            int score = minimax(djup + 1, alpha, beta, !maximizing, maxDjup);
+                            egetSpel.taBortDrag(x, y);
+
+                            if (score > bästaScore)
+                            {
+                                bästaScore = score;
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                bästaScore = 10000;
+
+                for (int y = 0; y < egetSpel.storlek; y++)
+                {
+                    for (int x = 0; x < egetSpel.storlek; x++)
+                    {
+                        if (egetSpel.ärTom(x, y))
+                        {
+                            egetSpel.görDrag(x, y);
+                            int score = minimax(djup + 1, alpha, beta, !maximizing, maxDjup);
+                            egetSpel.taBortDrag(x, y);
+
+                            if (score < bästaScore)
+                            {
+                                bästaScore = score;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return bästaScore;
+        }
+
+
+    }
+}
