@@ -20,6 +20,7 @@ namespace TreIRad
         bool spelKlart = false;
         TreIRadSpel spel = new TreIRadSpel(3,3);
         Button[] knappar;
+        bool spelarMotBot;
 
         public void Button_Click(object sender, EventArgs e)
         {
@@ -31,20 +32,24 @@ namespace TreIRad
             {
                 spel.görDrag(kordinater[0], kordinater[1]);
                 knapp.Text = spel.bräda[kordinater[1], kordinater[0]].ToString();
-                if (spel.ärVinst())
-                {
-                    Console.WriteLine("vinst");
-                }
-                else if (spel.ärOavgjort())
-                {
-                    Console.WriteLine("Oavgjort");
-                }
+
             }
+            kollaEfterVinst();
+
             
-
-
         }
         
+        public void kollaEfterVinst()
+        {
+            if (spel.ärVinst())
+            {
+                Console.WriteLine("vinst");
+            }
+            else if (spel.ärOavgjort())
+            {
+                Console.WriteLine("Oavgjort");
+            }
+        }
 
         public void spela()
         {

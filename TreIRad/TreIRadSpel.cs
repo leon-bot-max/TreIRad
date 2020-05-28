@@ -30,16 +30,21 @@ namespace TreIRad
 
         public void görDrag(int x, int y)
         {
+            //Kollar inte om rutan är ledig
             bräda[y, x] = tur;
 
+            ändraTur();
+        }
+
+        public void ändraTur()
+        {
             char temp = tur;
             tur = väntandeSpelare;
             väntandeSpelare = temp;
         }
-
-
         public bool ärOavgjort()
         {
+            //Loopa genom alla rutor
             for (int y = 0; y < storlek; y++)
             {
                 for (int x = 0; x < storlek; x++)
@@ -140,9 +145,7 @@ namespace TreIRad
         public void taBortDrag(int x, int y)
         {
             bräda[y, x] = new char();
-            char temp = tur;
-            tur = väntandeSpelare;
-            väntandeSpelare = temp;
+            ändraTur();
 
         }
         public int[] fåKordinater(int index)
@@ -167,7 +170,7 @@ namespace TreIRad
         }
         public void kopieraAnnatSpel(TreIRadSpel spel)
         {
-            if (spel.storlek != storlek)
+            if (spel.storlek != storlek) //Om spel har olika storlekar avbryts kopieringen
                 return;
 
             kopieraBräda(spel.bräda);
