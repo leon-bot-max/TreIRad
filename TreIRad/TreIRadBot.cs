@@ -134,7 +134,13 @@ namespace TreIRad
                             if (score > bästaScore)
                             {
                                 bästaScore = score;
+                                alpha = Math.Max(alpha, bästaScore);
+                                
                             }
+                        }
+                        if (alpha >= beta)
+                        {
+                            return bästaScore;
                         }
                     }
                 }
@@ -156,7 +162,12 @@ namespace TreIRad
                             if (score < bästaScore)
                             {
                                 bästaScore = score;
+                                beta = Math.Min(beta, bästaScore);
                             }
+                        }
+                        if (beta <= alpha)
+                        {
+                            return bästaScore;
                         }
                     }
                 }
