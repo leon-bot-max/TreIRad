@@ -12,9 +12,16 @@ namespace TreIRad
 {
     public partial class afterGame : Form
     {
-        public afterGame()
+        public afterGame(char resultat)
         {
             InitializeComponent();
+            if( resultat == 'T')
+            {
+                harVunnitBox.Text = "Ingen vann, oavgjort";
+            }
+            else
+            harVunnitBox.Text = "Spelare " + resultat.ToString() + " har vunnit ";
+
         }
 
         private void tillMenyKnapp_Click(object sender, EventArgs e)
@@ -24,5 +31,15 @@ namespace TreIRad
             myForm.ShowDialog();
             this.Close();
         }
+
+        private void startaOmKnapp_Click(object sender, EventArgs e)
+        {
+            Spelplan3x3 myForm = new Spelplan3x3(true);
+            this.Hide();
+            myForm.ShowDialog();
+            this.Close();
+        }
+
+      
     }
 }

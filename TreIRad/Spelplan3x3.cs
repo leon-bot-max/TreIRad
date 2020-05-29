@@ -59,10 +59,18 @@ namespace TreIRad
             if (spel.ärVinst())
             {
                 Console.WriteLine("vinst");
+                afterGame myForm = new afterGame(spel.väntandeSpelare);
+                this.Hide();
+                myForm.ShowDialog();
+                this.Close();
             }
             else if (spel.ärOavgjort())
             {
                 Console.WriteLine("Oavgjort");
+                afterGame myForm = new afterGame('T');
+                this.Hide();
+                myForm.ShowDialog();
+                this.Close();
             }
         }
 
