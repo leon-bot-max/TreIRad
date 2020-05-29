@@ -24,6 +24,10 @@
         private System.Windows.Forms.Button knappSpelaAI;
         private System.Windows.Forms.Button KnappSpelaAnnanSpelare;
         private System.Windows.Forms.Button stängAvKnapp;
+        private System.Windows.Forms.Button knapp3x3;
+        private System.Windows.Forms.Button knapp5x5;
+        private System.Windows.Forms.Label labelMål3x3;
+        private System.Windows.Forms.Label labelMål5x5;
     }
 }
 
