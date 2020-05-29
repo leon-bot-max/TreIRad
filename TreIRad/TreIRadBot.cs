@@ -17,6 +17,7 @@ namespace TreIRad
             this.spel = spel;
             egetSpel = new TreIRadSpel(spel.storlek, spel.antalFörVinst);
         }
+        
 
 
 
@@ -36,6 +37,7 @@ namespace TreIRad
                         if (egetSpel.ärVinst())
                         {
                             return new int[] { x, y };
+                            
                         }
                         egetSpel.taBortDrag(x, y);
                     }

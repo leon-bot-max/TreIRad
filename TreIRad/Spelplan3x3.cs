@@ -15,7 +15,7 @@ namespace TreIRad
 
 
         bool spelKlart = false;
-        TreIRadSpel spel = new TreIRadSpel(3, 3);
+        TreIRadSpel spel = new TreIRadSpel(3,3);
         TreIRadBot bot; //new TreIRadBot(spel);
         Button[] knappar;
         bool spelarMotBot;
@@ -26,6 +26,8 @@ namespace TreIRad
             görKnappar();
             bot = new TreIRadBot(spel);
             this.spelarMotBot = spelarMotBot;
+
+            
         }
 
 

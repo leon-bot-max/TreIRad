@@ -25,7 +25,7 @@ namespace TreIRad
 
         public bool ärTom(int x, int y)
         {
-            return bräda[y, x] == new char(); 
+            return bräda[y, x] == new char();
         }
 
         public void görDrag(int x, int y)
