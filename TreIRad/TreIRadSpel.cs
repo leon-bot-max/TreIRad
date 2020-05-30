@@ -15,11 +15,13 @@ namespace TreIRad
         public char väntandeSpelare = 'O';
         //bool eller char vems tur det är
         public int antalFörVinst;
+        public int antalTillgängligaDrag;
         public TreIRadSpel(int storlek, int antalFörVinst)
         {
             this.storlek = storlek;
             this.antalFörVinst = antalFörVinst;
             bräda = new char[storlek, storlek];  //Man kan ha en array som ser ut ['','','','','' osv] eller [['','',''], ['','',''] osv]
+            antalTillgängligaDrag = storlek * storlek;
         }
 
 
@@ -32,7 +34,7 @@ namespace TreIRad
         {
             //Kollar inte om rutan är ledig
             bräda[y, x] = tur;
-
+            antalTillgängligaDrag -= 1;
             ändraTur();
         }
 
@@ -145,6 +147,7 @@ namespace TreIRad
         public void taBortDrag(int x, int y)
         {
             bräda[y, x] = new char();
+            antalTillgängligaDrag += 1;
             ändraTur();
 
         }
@@ -176,6 +179,8 @@ namespace TreIRad
             kopieraBräda(spel.bräda);
             tur = spel.tur;
             väntandeSpelare = spel.väntandeSpelare;
+            antalTillgängligaDrag = spel.antalTillgängligaDrag;
+
         }
 
     }

@@ -15,19 +15,22 @@ namespace TreIRad
 
 
         bool spelKlart = false;
-        TreIRadSpel spel = new TreIRadSpel(3,3);
+        TreIRadSpel spel;
         TreIRadBot bot; //new TreIRadBot(spel);
         Button[] knappar;
         bool spelarMotBot;
+        
 
-        public Spelplan3x3(bool spelarMotBot)
+        public Spelplan3x3(bool spelarMotBot, int storlek, int mål)
         {
             InitializeComponent();
-            görKnappar();
+            spel = new TreIRadSpel(storlek, mål);
             bot = new TreIRadBot(spel);
             this.spelarMotBot = spelarMotBot;
+            görKnappar();
 
-            
+
+
         }
 
 
@@ -42,12 +45,12 @@ namespace TreIRad
                 spel.görDrag(kordinater[0], kordinater[1]);
                 knapp.Text = spel.bräda[kordinater[1], kordinater[0]].ToString();
                 kollaEfterVinst();
+
                 if (spelarMotBot)
                 {
                     görBotDrag();
                     kollaEfterVinst();
                 }
-                
             }
             
         }
@@ -59,7 +62,7 @@ namespace TreIRad
             if (spel.ärVinst())
             {
                 Console.WriteLine("vinst");
-                afterGame myForm = new afterGame(spel.väntandeSpelare);
+                afterGame myForm = new afterGame(spel.väntandeSpelare, spelarMotBot, spel.storlek, spel.antalFörVinst, spel.bräda);
                 this.Hide();
                 myForm.ShowDialog();
                 this.Close();
@@ -67,7 +70,7 @@ namespace TreIRad
             else if (spel.ärOavgjort())
             {
                 Console.WriteLine("Oavgjort");
-                afterGame myForm = new afterGame('T');
+                afterGame myForm = new afterGame('T', spelarMotBot, spel.storlek, spel.antalFörVinst, spel.bräda);
                 this.Hide();
                 myForm.ShowDialog();
                 this.Close();
@@ -76,7 +79,8 @@ namespace TreIRad
 
         public void görBotDrag()
         {
-            int[] drag = bot.fåDragMinimax(100);
+            int djup = 12-spel.antalTillgängligaDrag/3;
+            int[] drag = bot.fåDragMinimax(djup);
             spel.görDrag(drag[0], drag[1]);
 
             for (int i = 0; i < knappar.Length; i++)

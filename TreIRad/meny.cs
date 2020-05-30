@@ -153,7 +153,7 @@ namespace TreIRad
         private void Knapp3x3_Click(object sender, EventArgs e)
         {
 
-            Spelplan3x3 myForm = new Spelplan3x3(true);
+            Spelplan3x3 myForm = new Spelplan3x3(true, storlek, mål);
             this.Hide();
             myForm.ShowDialog();
             this.Close();
@@ -162,7 +162,7 @@ namespace TreIRad
 
         private void KnappSpelaAnnanSpelare_Click(object sender, EventArgs e)
         {
-            Spelplan3x3 myForm = new Spelplan3x3(false);
+            Spelplan3x3 myForm = new Spelplan3x3(false, storlek, mål);
             this.Hide();
             myForm.ShowDialog();
             this.Close();
