@@ -48,7 +48,7 @@ namespace TreIRad
                 kollaEfterVinst();
 
                 antalTillgängligaDrag -= 1;
-
+                
                 if (spelarMotBot)
                 {
                     görBotDrag();

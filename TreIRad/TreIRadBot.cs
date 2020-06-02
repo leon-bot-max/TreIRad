@@ -89,6 +89,7 @@ namespace TreIRad
                     }
                 }
             }
+            Console.WriteLine("Djup " + maxDjup + " score " + bästaScore);
             return bästaDrag;
         }
 
@@ -179,6 +180,9 @@ namespace TreIRad
             return bästaScore;
         }
 
+
+
+   
 
     }
 }
