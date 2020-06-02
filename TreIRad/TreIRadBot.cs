@@ -61,14 +61,15 @@ namespace TreIRad
         public int[] fåDragMinimax(int maxDjup)
         {
             egetSpel.kopieraAnnatSpel(spel);
-            bool maximize = (egetSpel.tur == 'X');
+            bool maximize = (egetSpel.tur == 'X'); //X är maximera O är minimera
 
             int bästaScore = -10000;
             int[] bästaDrag = new int[] { 0,0};
-            if (!maximize)
+            if (!maximize) //om minimera ska bästa score vara oändigt högt
             {
                 bästaScore = 10000;
             }
+            //Loopa genom alla rutor
             for (int y = 0; y < egetSpel.storlek; y++)
             {
                 for (int x = 0; x < egetSpel.storlek; x++)
@@ -76,9 +77,10 @@ namespace TreIRad
                     if (egetSpel.ärTom(x, y))
                     {
                         egetSpel.görDrag(x, y);
-                        int score = minimax(1, -10000, 10000, !maximize, maxDjup);
-                        egetSpel.taBortDrag(x, y);
+                        int score = minimax(1, -10000, 10000, !maximize, maxDjup);//Få score för draget
+                        egetSpel.taBortDrag(x, y); //Ta bort draget så att nästa drag kan testas
 
+                        //Om score är bättre än bästaScore 
                         if ((score > bästaScore && maximize) || (score < bästaScore && !maximize))
                         {
                             bästaScore = score;
@@ -87,7 +89,6 @@ namespace TreIRad
                     }
                 }
             }
-            //egetSpel.görDrag(x, y));
             return bästaDrag;
         }
 
@@ -97,29 +98,29 @@ namespace TreIRad
             bool finnsVinst = egetSpel.ärVinst();
             if (finnsVinst)
             {
-                if (egetSpel.väntandeSpelare == 'X')
+                if (egetSpel.väntandeSpelare == 'X')//Maximeraren vann
                 {
                     return 100-djup;
                 }
-                else
+                else //Minimeraren vann
                 {
                     return -100+djup;
                 }
             }
-            else if (egetSpel.ärOavgjort())
+            else if (egetSpel.ärOavgjort()) //Oavgjort
             {
                 return 0;
             }
-            else if (djup >= maxDjup)
+            else if (djup >= maxDjup) //maxdjup nått
             {
                 return 0;
             }
 
-            //x - maximizing?
-            //o - minimizing?
+            //x - maximizing
+            //o - minimizing
             int bästaScore = 0;
 
-            if (maximizing)
+            if (maximizing) //maximerande
             {
                 bästaScore = -10000;
 
@@ -140,7 +141,7 @@ namespace TreIRad
                                 
                             }
                         }
-                        if (alpha >= beta)
+                        if (alpha >= beta) //Om alpha > beta behöver den inte leta längre
                         {
                             return bästaScore;
                         }
@@ -167,7 +168,7 @@ namespace TreIRad
                                 beta = Math.Min(beta, bästaScore);
                             }
                         }
-                        if (beta <= alpha)
+                        if (beta <= alpha) //Om beta <= alpha behöver den inte leta längre
                         {
                             return bästaScore;
                         }

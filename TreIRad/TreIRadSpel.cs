@@ -15,26 +15,23 @@ namespace TreIRad
         public char väntandeSpelare = 'O';
         //bool eller char vems tur det är
         public int antalFörVinst;
-        public int antalTillgängligaDrag;
         public TreIRadSpel(int storlek, int antalFörVinst)
         {
             this.storlek = storlek;
             this.antalFörVinst = antalFörVinst;
-            bräda = new char[storlek, storlek];  //Man kan ha en array som ser ut ['','','','','' osv] eller [['','',''], ['','',''] osv]
-            antalTillgängligaDrag = storlek * storlek;
+            bräda = new char[storlek, storlek];  //[x, y] där 0, 0 är högst upp till höger
         }
 
 
         public bool ärTom(int x, int y)
         {
-            return bräda[y, x] == new char();
+            return bräda[y, x] == new char(); //Kollar om rutan är ledig
         }
 
         public void görDrag(int x, int y)
         {
-            //Kollar inte om rutan är ledig
+            //Kollar inte om rutan är ledig utan gör draget även om det redan finns något där
             bräda[y, x] = tur;
-            antalTillgängligaDrag -= 1;
             ändraTur();
         }
 
@@ -46,12 +43,14 @@ namespace TreIRad
         }
         public bool ärOavgjort()
         {
+            //Denna måste kollas efter man kolllat efter vinst
+
             //Loopa genom alla rutor
             for (int y = 0; y < storlek; y++)
             {
                 for (int x = 0; x < storlek; x++)
                 {
-                    if (bräda[y, x] == new char())//finns tom
+                    if (bräda[y, x] == new char())//finns tom ock därmed inte oavgjort
                     {
                         return false;
                     }
@@ -63,18 +62,18 @@ namespace TreIRad
 
         public bool ärVinst()
         {
-            //Letar fall den som la sist har en vinst
+            //Letar fall den som la sist har en vinst, den som la sist är väntandeSpelare
             for (int y = 0; y < storlek; y++)
             {
                 for (int x = 0; x < storlek; x++)
                 {
-                    //Vågrätt
-                    if (x <= storlek - antalFörVinst)
+                    //Vågrätt (--> höger)
+                    if (x <= storlek - antalFörVinst) 
                     {
                         bool vinstHittad = true;
                         for (int v = 0; v < antalFörVinst; v++)
                         {
-                            if (bräda[y, x + v] != väntandeSpelare)
+                            if (bräda[y, x + v] != väntandeSpelare)//En av rutorna är inte spelaren och därmed inte vinst
                             {
                                 vinstHittad = false;
                                 break;
@@ -85,13 +84,13 @@ namespace TreIRad
                             return true;
                         }
                     }
-                    //Lodrätt
+                    //Lodrätt ned
                     if (y <= storlek - antalFörVinst)
                     {
                         bool vinstHittad = true;
                         for (int v = 0; v < antalFörVinst; v++)
                         {
-                            if (bräda[y + v, x] != väntandeSpelare)
+                            if (bräda[y + v, x] != väntandeSpelare)//Ingen vinst
                             {
                                 vinstHittad = false;
                                 break;
@@ -108,7 +107,7 @@ namespace TreIRad
                         bool vinstHittad = true;
                         for (int v = 0; v < antalFörVinst; v++)
                         {
-                            if (bräda[y + v, x + v] != väntandeSpelare)
+                            if (bräda[y + v, x + v] != väntandeSpelare)//ingen vinst
                             {
                                 vinstHittad = false;
                                 break;
@@ -119,13 +118,13 @@ namespace TreIRad
                             return true;
                         }
                     }
-                    //diagobal vänster ned
+                    //diagonal vänster ned
                     if (y <= storlek - antalFörVinst && x - (antalFörVinst - 1) >= 0)
                     {
                         bool vinstHittad = true;
                         for (int v = 0; v < antalFörVinst; v++)
                         {
-                            if (bräda[y + v, x - v] != väntandeSpelare)
+                            if (bräda[y + v, x - v] != väntandeSpelare) // ingen vinst
                             {
                                 vinstHittad = false;
                                 break;
@@ -139,23 +138,23 @@ namespace TreIRad
                 }
             }
 
-            return false;
+            return false; //Ingen vinst hittades
         }
 
 
 
         public void taBortDrag(int x, int y)
         {
+            //Tar bort bokstaven på en ruta och ändra tillbaka turen
             bräda[y, x] = new char();
-            antalTillgängligaDrag += 1;
             ändraTur();
 
         }
         public int[] fåKordinater(int index)
         {
             int[] coords = new int[2];//{x, y}
-            coords[0] = index % storlek;
-            coords[1] = index / storlek; //Ska golvas tror jag
+            coords[0] = index % storlek;//x
+            coords[1] = index / storlek;//y
             return coords;
         }
 
@@ -179,7 +178,6 @@ namespace TreIRad
             kopieraBräda(spel.bräda);
             tur = spel.tur;
             väntandeSpelare = spel.väntandeSpelare;
-            antalTillgängligaDrag = spel.antalTillgängligaDrag;
 
         }
 

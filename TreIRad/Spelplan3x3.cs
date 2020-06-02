@@ -19,7 +19,7 @@ namespace TreIRad
         TreIRadBot bot; //new TreIRadBot(spel);
         Button[] knappar;
         bool spelarMotBot;
-        
+        int antalTillgängligaDrag;
 
         public Spelplan3x3(bool spelarMotBot, int storlek, int mål)
         {
@@ -27,6 +27,7 @@ namespace TreIRad
             spel = new TreIRadSpel(storlek, mål);
             bot = new TreIRadBot(spel);
             this.spelarMotBot = spelarMotBot;
+            antalTillgängligaDrag = storlek * storlek;
             görKnappar();
 
 
@@ -45,6 +46,8 @@ namespace TreIRad
                 spel.görDrag(kordinater[0], kordinater[1]);
                 knapp.Text = spel.bräda[kordinater[1], kordinater[0]].ToString();
                 kollaEfterVinst();
+
+                antalTillgängligaDrag -= 1;
 
                 if (spelarMotBot)
                 {
@@ -79,15 +82,16 @@ namespace TreIRad
 
         public void görBotDrag()
         {
-            int djup = 12-spel.antalTillgängligaDrag/3;
+            int djup = 13-antalTillgängligaDrag/3;//Kan ändras
             int[] drag = bot.fåDragMinimax(djup);
             spel.görDrag(drag[0], drag[1]);
 
-            for (int i = 0; i < knappar.Length; i++)
-            {
-                int[] koord = spel.fåKordinater(i);
-                knappar[i].Text = spel.bräda[koord[1], koord[0]].ToString();
-            }
+            int index = drag[1] * spel.storlek + drag[0];
+            
+            knappar[index].Text = spel.bräda[drag[1], drag[0]].ToString();
+            
+            antalTillgängligaDrag -= 1;
+
         }
 
         public void spela()
