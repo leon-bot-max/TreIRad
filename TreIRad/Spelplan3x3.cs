@@ -14,7 +14,7 @@ namespace TreIRad
     {
 
 
-        bool spelKlart = false;
+        
         TreIRadSpel spel;
         TreIRadBot bot; //new TreIRadBot(spel);
         Button[] knappar;

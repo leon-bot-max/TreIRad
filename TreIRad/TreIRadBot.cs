@@ -10,7 +10,7 @@ namespace TreIRad
     {
         TreIRadSpel spel;
         TreIRadSpel egetSpel;
-        private int y;
+        
 
         public TreIRadBot(TreIRadSpel spel)
         {
@@ -89,7 +89,7 @@ namespace TreIRad
 
             //x - maximizing
             //o - minimizing
-            int bästaScore = 0;
+            int bästaScore;
 
             if (maximizing) //maximerande
             {
