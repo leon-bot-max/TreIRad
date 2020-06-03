@@ -36,7 +36,7 @@ namespace TreIRad
 
             int bästaScore = -10000;
             int[] bästaDrag = new int[] { 0,0};
-            if (!maximize) //om minimera ska bästa score vara oändigt högt
+            if (!maximize) //om minimera ska bästa score vara högt
             {
                 bästaScore = 10000;
             }
