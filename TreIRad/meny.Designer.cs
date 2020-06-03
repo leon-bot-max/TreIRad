@@ -28,6 +28,8 @@
         private System.Windows.Forms.Button knapp5x5;
         private System.Windows.Forms.Label labelMål3x3;
         private System.Windows.Forms.Label labelMål5x5;
+        private System.Windows.Forms.Button knapp4x4;
+        private System.Windows.Forms.Label labelMål4x4;
     }
 }
 

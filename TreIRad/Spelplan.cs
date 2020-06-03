@@ -85,7 +85,7 @@ namespace TreIRad
 
         public void görBotDrag()
         {
-            //Djupet ändras beroende på antal drag. Funkar till 3x3 och 5x5
+            //Djupet ändras beroende på antal drag. Funkar från 3x3 till 5x5
             int djup = (int)(15 * Math.Exp(-0.046 * antalTillgängligaDrag));//13-antalTillgängligaDrag/3;//Kan ändras
             int[] drag = bot.fåDragMinimax(djup);
             spel.görDrag(drag[0], drag[1]);

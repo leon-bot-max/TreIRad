@@ -27,6 +27,8 @@ namespace TreIRad
             this.knapp5x5 = new System.Windows.Forms.Button();
             this.labelMål3x3 = new System.Windows.Forms.Label();
             this.labelMål5x5 = new System.Windows.Forms.Label();
+            this.knapp4x4 = new System.Windows.Forms.Button();
+            this.labelMål4x4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // välkommenText
@@ -124,11 +126,37 @@ namespace TreIRad
             this.labelMål5x5.Text = "Mål: Få 4 i rad";
             this.labelMål5x5.Visible = false;
             // 
+            // knapp4x4
+            // 
+            this.knapp4x4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.knapp4x4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.knapp4x4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.knapp4x4.Location = new System.Drawing.Point(257, 157);
+            this.knapp4x4.Name = "knapp4x4";
+            this.knapp4x4.Size = new System.Drawing.Size(87, 57);
+            this.knapp4x4.TabIndex = 10;
+            this.knapp4x4.Text = "4x4";
+            this.knapp4x4.UseVisualStyleBackColor = false;
+            this.knapp4x4.Click += new System.EventHandler(this.knapp4x4_Click);
+            // 
+            // labelMål4x4
+            // 
+            this.labelMål4x4.AutoSize = true;
+            this.labelMål4x4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMål4x4.Location = new System.Drawing.Point(230, 129);
+            this.labelMål4x4.Name = "labelMål4x4";
+            this.labelMål4x4.Size = new System.Drawing.Size(150, 25);
+            this.labelMål4x4.TabIndex = 11;
+            this.labelMål4x4.Text = "Mål: Få 4 i rad";
+            this.labelMål4x4.Visible = false;
+            // 
             // Meny
             // 
             this.BackColor = System.Drawing.Color.DimGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(584, 561);
+            this.Controls.Add(this.labelMål4x4);
+            this.Controls.Add(this.knapp4x4);
             this.Controls.Add(this.labelMål5x5);
             this.Controls.Add(this.labelMål3x3);
             this.Controls.Add(this.knapp5x5);
@@ -178,10 +206,19 @@ namespace TreIRad
             storlek = 3;
             mål = 3;
 
+            avVäljAllaStorlekar();
             knapp3x3.BackColor = SystemColors.ActiveCaption;
-            knapp5x5.BackColor = SystemColors.ControlDarkDark;
             labelMål3x3.Visible = true;
-            labelMål5x5.Visible = false;
+        }
+
+        private void knapp4x4_Click(object sender, EventArgs e)//gör så att man spelar på 4x4 plan
+        {
+            storlek = 4;
+            mål = 4;
+
+            avVäljAllaStorlekar();
+            knapp4x4.BackColor = SystemColors.ActiveCaption;
+            labelMål4x4.Visible = true;
         }
 
         private void knapp5x5_Click(object sender, EventArgs e)//gör att man spelar på en 5x5 plan
@@ -189,10 +226,25 @@ namespace TreIRad
             storlek = 5;
             mål = 4;
 
+            avVäljAllaStorlekar();
             knapp5x5.BackColor = SystemColors.ActiveCaption;
-            knapp3x3.BackColor = SystemColors.ControlDarkDark;
             labelMål5x5.Visible = true;
-            labelMål3x3.Visible = false;
         }
+
+
+        private void avVäljAllaStorlekar()
+        {
+            //3x3
+            knapp3x3.BackColor = SystemColors.ControlDarkDark;
+            labelMål3x3.Visible = false;
+            //4x4
+            knapp4x4.BackColor = SystemColors.ControlDarkDark;
+            labelMål4x4.Visible = false;
+            //5x5
+            knapp5x5.BackColor = SystemColors.ControlDarkDark;
+            labelMål5x5.Visible = false;
+        }
+
+
     }
 }
