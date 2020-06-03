@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace TreIRad
 {
-    public partial class afterGame : Form
+    public partial class AfterGame : Form
     {
 
         bool spelarMotBot;
         int storlek;
         int mål;
-        public afterGame(char resultat, bool spelarMotBot, int storlek, int mål, char[,] bräda)
+        public AfterGame(char resultat, bool spelarMotBot, int storlek, int mål, char[,] bräda)
         {
             InitializeComponent();
             if (resultat == 'T')// skriver ut vem som vunnit eller om det blir oavgjort
@@ -45,7 +45,7 @@ namespace TreIRad
 
         private void startaOmKnapp_Click(object sender, EventArgs e)//startar om spelet
         {
-            Spelplan3x3 myForm = new Spelplan3x3(spelarMotBot, storlek, mål);
+            Spelplan myForm = new Spelplan(spelarMotBot, storlek, mål);
             this.Hide();
             myForm.ShowDialog();
             this.Close();

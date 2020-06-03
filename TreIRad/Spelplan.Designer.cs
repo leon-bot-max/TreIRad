@@ -1,6 +1,6 @@
 ﻿namespace TreIRad
 {
-    partial class Spelplan3x3
+    partial class Spelplan
     {
         /// <summary>
         /// Required designer variable.

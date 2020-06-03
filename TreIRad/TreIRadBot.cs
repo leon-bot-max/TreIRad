@@ -10,7 +10,7 @@ namespace TreIRad
     {
         TreIRadSpel spel;
         TreIRadSpel egetSpel;
-        
+
 
         public TreIRadBot(TreIRadSpel spel)
         {
@@ -31,7 +31,6 @@ namespace TreIRad
         public int[] fåDragMinimax(int maxDjup)
         {
             egetSpel.kopieraAnnatSpel(spel);
-            Random rnd = new Random();
 
             bool maximize = (egetSpel.tur == 'X'); //X är maximera O är minimera
 
@@ -58,15 +57,11 @@ namespace TreIRad
                             bästaScore = score;
                             bästaDrag = new int[] { x, y };
                         }
-                        else if (score == bästaScore && rnd.Next(2) == 1)//Om den har lika score tar den en random
-                        {
-                            bästaScore = score;
-                            bästaDrag = new int[] { x, y };
-                        }
+                     
                     }
                 }
             }
-            Console.WriteLine("Djup " + maxDjup + " score " + bästaScore);
+            //Console.WriteLine("Djup " + maxDjup + " score " + bästaScore);
             return bästaDrag;
         }
 

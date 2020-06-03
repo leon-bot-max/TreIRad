@@ -52,7 +52,7 @@ namespace TreIRad
             this.knappSpelaAI.TabIndex = 3;
             this.knappSpelaAI.Text = "Spela mot AI";
             this.knappSpelaAI.UseVisualStyleBackColor = false;
-            this.knappSpelaAI.Click += new System.EventHandler(this.Knapp3x3_Click);
+            this.knappSpelaAI.Click += new System.EventHandler(this.KnappSpelaBot_Click);
             // 
             // KnappSpelaAnnanSpelare
             // 
@@ -88,7 +88,7 @@ namespace TreIRad
             this.knapp3x3.TabIndex = 6;
             this.knapp3x3.Text = "3x3";
             this.knapp3x3.UseVisualStyleBackColor = false;
-            this.knapp3x3.Click += new System.EventHandler(this.knapp3x3_Click_1);
+            this.knapp3x3.Click += new System.EventHandler(this.knapp3x3_Click);
             // 
             // knapp5x5
             // 
@@ -150,10 +150,10 @@ namespace TreIRad
         int storlek = 3;
         int mål = 3;
 
-        private void Knapp3x3_Click(object sender, EventArgs e)//gör att man spelar på en 3x3 plan
+        private void KnappSpelaBot_Click(object sender, EventArgs e)//gör att man spelar på en 3x3 plan
         {
 
-            Spelplan3x3 myForm = new Spelplan3x3(true, storlek, mål);
+            Spelplan myForm = new Spelplan(true, storlek, mål);
             this.Hide();
             myForm.ShowDialog();
             this.Close();
@@ -162,7 +162,7 @@ namespace TreIRad
 
         private void KnappSpelaAnnanSpelare_Click(object sender, EventArgs e)// spela 1v1
         {
-            Spelplan3x3 myForm = new Spelplan3x3(false, storlek, mål);
+            Spelplan myForm = new Spelplan(false, storlek, mål);
             this.Hide();
             myForm.ShowDialog();
             this.Close();
@@ -173,7 +173,7 @@ namespace TreIRad
             System.Windows.Forms.Application.Exit();
         }
 
-        private void knapp3x3_Click_1(object sender, EventArgs e)// gör att man spelar på en 3x3 plan
+        private void knapp3x3_Click(object sender, EventArgs e)// gör att man spelar på en 3x3 plan
         {
             storlek = 3;
             mål = 3;

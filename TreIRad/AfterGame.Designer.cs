@@ -1,6 +1,6 @@
 ﻿namespace TreIRad
 {
-    partial class afterGame
+    partial class AfterGame
     {
         /// <summary>
         /// Required designer variable.
