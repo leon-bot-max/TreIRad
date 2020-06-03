@@ -86,7 +86,7 @@ namespace TreIRad
             int[] drag = bot.fåDragMinimax(djup);
             spel.görDrag(drag[0], drag[1]);
 
-            int index = drag[1] * spel.storlek + drag[0];
+            int index = drag[1] * spel.storlek + drag[0]; //Hittar knapp index som ska ändras
             
             knappar[index].Text = spel.bräda[drag[1], drag[0]].ToString();
             
@@ -99,8 +99,8 @@ namespace TreIRad
         public void görKnappar()
         {
 
-            int knappStorlek = Width/spel.storlek;//Width / spel.storlek-3;
-            knappar = new Button[spel.storlek * spel.storlek];
+            int knappStorlek = Width/spel.storlek;
+            knappar = new Button[spel.storlek * spel.storlek];//1D Array med knappar
             for (int i = 0;  i < knappar.Length; i++)
             {
                 int x = (i % spel.storlek)*knappStorlek;
@@ -111,7 +111,7 @@ namespace TreIRad
                 knapp.Size = new Size(knappStorlek, knappStorlek);
                 knapp.Text = "";
                 knapp.Name = "knapp" + i;
-                knapp.Font = new Font("Trebuchet MS", 72);
+                knapp.Font = new Font("Trebuchet MS", knappStorlek/2);
                 knapp.Click += new EventHandler(Button_Click);
                 knapp.BringToFront();               
                 Controls.Add(knapp);

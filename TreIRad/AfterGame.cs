@@ -54,18 +54,25 @@ namespace TreIRad
         {
 
             int sidLängd = 96 / storlek;
+            int mittenPosX = Width / 2;
+            int toppPosY = 100;
+
             for (int y = 0; y < bräda.GetLength(0); y++)
             {
                 for (int x = 0; x < bräda.GetLength(1); x++)
                 {
+
+                    int posX = (mittenPosX - sidLängd * (storlek / 2)) + sidLängd * x; //Får position X
+                    int posY = toppPosY + y * sidLängd; //Position Y
+
                     Label label = new Label();
                     label.Text = bräda[y, x].ToString();
                     label.AutoSize = false;
                     label.BackColor = SystemColors.ControlDark;
-                    label.BorderStyle = BorderStyle.FixedSingle;
+                    label.TextAlign = ContentAlignment.MiddleCenter;
                     label.Size = new Size(sidLängd, sidLängd);
                     label.Font = new Font("Arial", 60/storlek);
-                    label.Location = new Point((Width / 2 - sidLängd*(storlek/2)) + sidLängd * x, 100 + y * sidLängd);
+                    label.Location = new Point(posX +x, posY+y);//+x och +y för att få mellanrum
                     label.BringToFront();
                     Controls.Add(label);
                 }

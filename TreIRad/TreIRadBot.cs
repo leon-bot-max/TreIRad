@@ -31,6 +31,8 @@ namespace TreIRad
         public int[] fåDragMinimax(int maxDjup)
         {
             egetSpel.kopieraAnnatSpel(spel);
+            Random rnd = new Random();
+
             bool maximize = (egetSpel.tur == 'X'); //X är maximera O är minimera
 
             int bästaScore = -10000;
@@ -52,6 +54,11 @@ namespace TreIRad
 
                         //Om score är bättre än bästaScore 
                         if ((score > bästaScore && maximize) || (score < bästaScore && !maximize))
+                        {
+                            bästaScore = score;
+                            bästaDrag = new int[] { x, y };
+                        }
+                        else if (score == bästaScore && rnd.Next(2) == 1)//Om den har lika score tar den en random
                         {
                             bästaScore = score;
                             bästaDrag = new int[] { x, y };
@@ -112,7 +119,7 @@ namespace TreIRad
                                 
                             }
                         }
-                        if (alpha >= beta) //Om alpha > beta behöver den inte leta längre
+                        if (alpha >= beta) //Om alpha >= beta behöver den inte leta längre
                         {
                             return bästaScore;
                         }
