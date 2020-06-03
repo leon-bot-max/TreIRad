@@ -54,7 +54,7 @@ namespace TreIRad
         {
 
             int sidLängd = 96 / storlek;
-            int mittenPosX = Width / 2;
+            int högerPosX = Width / 2 - sidLängd * (storlek / 2);
             int toppPosY = 100;
 
             for (int y = 0; y < bräda.GetLength(0); y++)
@@ -62,8 +62,8 @@ namespace TreIRad
                 for (int x = 0; x < bräda.GetLength(1); x++)
                 {
 
-                    int posX = (mittenPosX - sidLängd * (storlek / 2)) + sidLängd * x; //Får position X
-                    int posY = toppPosY + y * sidLängd; //Position Y
+                    int posX = högerPosX + sidLängd * x; //Position X
+                    int posY = toppPosY + sidLängd * y; //Position Y
 
                     Label label = new Label();
                     label.Text = bräda[y, x].ToString();
