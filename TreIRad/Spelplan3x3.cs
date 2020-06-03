@@ -60,7 +60,7 @@ namespace TreIRad
         
   
 
-        public void kollaEfterVinst()
+        public void kollaEfterVinst()//vinst eller oavgjort
         {
             if (spel.ärVinst())
             {

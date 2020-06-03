@@ -150,7 +150,7 @@ namespace TreIRad
         int storlek = 3;
         int mål = 3;
 
-        private void Knapp3x3_Click(object sender, EventArgs e)
+        private void Knapp3x3_Click(object sender, EventArgs e)//gör att man spelar på en 3x3 plan
         {
 
             Spelplan3x3 myForm = new Spelplan3x3(true, storlek, mål);
@@ -160,7 +160,7 @@ namespace TreIRad
 
         }
 
-        private void KnappSpelaAnnanSpelare_Click(object sender, EventArgs e)
+        private void KnappSpelaAnnanSpelare_Click(object sender, EventArgs e)// spela 1v1
         {
             Spelplan3x3 myForm = new Spelplan3x3(false, storlek, mål);
             this.Hide();
@@ -168,12 +168,12 @@ namespace TreIRad
             this.Close();
         }
 
-        private void stängAvKnapp_Click(object sender, EventArgs e)
+        private void stängAvKnapp_Click(object sender, EventArgs e)//avslutar applikationen
         {
             System.Windows.Forms.Application.Exit();
         }
 
-        private void knapp3x3_Click_1(object sender, EventArgs e)
+        private void knapp3x3_Click_1(object sender, EventArgs e)// gör att man spelar på en 3x3 plan
         {
             storlek = 3;
             mål = 3;
@@ -184,7 +184,7 @@ namespace TreIRad
             labelMål5x5.Visible = false;
         }
 
-        private void knapp5x5_Click(object sender, EventArgs e)
+        private void knapp5x5_Click(object sender, EventArgs e)//gör att man spelar på en 5x5 plan
         {
             storlek = 5;
             mål = 4;

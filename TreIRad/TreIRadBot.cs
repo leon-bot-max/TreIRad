@@ -21,37 +21,7 @@ namespace TreIRad
 
 
 
-        public int[] fåDrag(char[,] bräda)
-        {
-            egetSpel.kopieraAnnatSpel(spel);
-
-            //Kolla om bot kan vinna
-            for (int y = 0; y < egetSpel.storlek; y++)
-            {
-                for (int x = 0; x < egetSpel.storlek; x++)
-                {
-                    if (egetSpel.ärTom(x, y))
-                    {
-                        egetSpel.görDrag(x, y);
-
-                        if (egetSpel.ärVinst())
-                        {
-                            return new int[] { x, y };
-                            
-                        }
-                        egetSpel.taBortDrag(x, y);
-                    }
-                }
-            }
-
-
-
-            //Kolla om motståndare kan vinna
-            //Lägg i mitten/hörn
-            //Lägg i sida
-
-            return new int[] { -1, -1 };
-        }//Minimax alogitm=??
+        
 
 
 

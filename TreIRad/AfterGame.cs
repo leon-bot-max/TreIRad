@@ -19,7 +19,7 @@ namespace TreIRad
         public afterGame(char resultat, bool spelarMotBot, int storlek, int mål, char[,] bräda)
         {
             InitializeComponent();
-            if (resultat == 'T')
+            if (resultat == 'T')// skriver ut vem som vunnit eller om det blir oavgjort
             {
                 harVunnitBox.Text = "Ingen vann, oavgjort";
             }
@@ -35,7 +35,7 @@ namespace TreIRad
 
         }
 
-        private void tillMenyKnapp_Click(object sender, EventArgs e)
+        private void tillMenyKnapp_Click(object sender, EventArgs e)//går tillbaka till menyn
         {
             Meny myForm = new Meny();
             this.Hide();
@@ -43,14 +43,14 @@ namespace TreIRad
             this.Close();
         }
 
-        private void startaOmKnapp_Click(object sender, EventArgs e)
+        private void startaOmKnapp_Click(object sender, EventArgs e)//startar om spelet
         {
             Spelplan3x3 myForm = new Spelplan3x3(spelarMotBot, storlek, mål);
             this.Hide();
             myForm.ShowDialog();
             this.Close();
         }
-        private void ritaBräda(char[,] bräda)
+        private void ritaBräda(char[,] bräda)//gör en kopia av brädan som man ser i aftergame
         {
 
             int sidLängd = 96 / storlek;
