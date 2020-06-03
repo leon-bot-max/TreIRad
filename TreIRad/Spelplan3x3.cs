@@ -94,16 +94,7 @@ namespace TreIRad
 
         }
 
-        public void spela()
-        {
-            while(spelKlart == false)
-            {
-               
-
-
-                //om tre i rad spelaklart = true
-            }
-        }
+       
 
         public void görKnappar()
         {
